@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import adminCredentials from '../config/adminCredentials.js'
+import { getPublicAssetUrl } from '../utils/assets.js'
 
 function AdminLogin({ onLogin }) {
   const [email, setEmail] = useState('')
@@ -32,7 +33,7 @@ function AdminLogin({ onLogin }) {
   return (
     <main className="auth-page">
       <section className="auth-card">
-        <Link className="brand auth-brand" to="/"><img src="/images/logo.png" alt="" /><span>TICKETLY</span></Link>
+        <Link className="brand auth-brand" to="/"><img src={getPublicAssetUrl('/images/logo.png')} alt="" /><span>TICKETLY</span></Link>
         <p className="eyebrow">TICKETLY MANAGEMENT</p>
         <h1>Admin sign in.</h1>
         <p className="auth-description">This login is for the single configured Admin account.</p>

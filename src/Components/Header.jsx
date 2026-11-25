@@ -2,6 +2,7 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import SearchBar from './SearchBar.jsx'
+import { getPublicAssetUrl } from '../utils/assets.js'
 
 const categories = [
   { name: 'Movies', path: '/movies' },
@@ -48,7 +49,7 @@ function Header({
     <header className="site-header">
       <div className="header-main">
         <Link className="brand" to="/" aria-label="Ticketly home">
-          <img src="/images/logo.png" alt="" />
+          <img src={getPublicAssetUrl('/images/logo.png')} alt="" />
           <span>TICKETLY</span>
         </Link>
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
+import { getPublicAssetUrl } from '../utils/assets.js'
 
 const slides = [
-  { image: '/images/banner1.jpg', label: 'Make tonight unforgettable', detail: 'Find your next big-screen moment.' },
-  { image: '/images/banner2.jpg', label: 'The city is your stage', detail: 'Live music, new memories, one great night.' },
-  { image: '/images/banner3.jpg', label: 'Be there for the big moment', detail: 'The best seats are waiting for you.' },
+  { image: getPublicAssetUrl('/images/banner1.jpg'), label: 'Make tonight unforgettable', detail: 'Find your next big-screen moment.' },
+  { image: getPublicAssetUrl('/images/banner2.jpg'), label: 'The city is your stage', detail: 'Live music, new memories, one great night.' },
+  { image: getPublicAssetUrl('/images/banner3.jpg'), label: 'Be there for the big moment', detail: 'The best seats are waiting for you.' },
 ]
 
 function Banner() {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { getPublicAssetUrl } from '../utils/assets.js'
 import { formatPrice } from '../utils/storage.js'
 
 const emptyForm = {
@@ -84,7 +85,7 @@ function ManageEvents({ user, events, setEvents, onLogout }) {
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <Link className="brand admin-brand" to="/"><img src="/images/logo.png" alt="" /><span>TICKETLY</span></Link>
+        <Link className="brand admin-brand" to="/"><img src={getPublicAssetUrl('/images/logo.png')} alt="" /><span>TICKETLY</span></Link>
         <p className="sidebar-label">WORKSPACE</p>
         <Link className="sidebar-link" to="/admin">▦ &nbsp; Overview</Link>
         <a className="sidebar-link active" href="#event-form">＋ &nbsp; Add event</a>

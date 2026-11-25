@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { getPublicAssetUrl } from '../utils/assets.js'
 import { formatPrice } from '../utils/storage.js'
 
 function EventCard({ event }) {
@@ -9,7 +10,7 @@ function EventCard({ event }) {
     <article className="event-card">
       <Link className="event-poster" to={`/event/${event.id}`}>
         {!imageFailed && event.poster ? (
-          <img alt={event.name} loading="lazy" onError={() => setImageFailed(true)} src={event.poster} />
+          <img alt={event.name} loading="lazy" onError={() => setImageFailed(true)} src={getPublicAssetUrl(event.poster)} />
         ) : (
           <span className="poster-placeholder">{event.category}</span>
         )}

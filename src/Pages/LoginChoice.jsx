@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
+import { getPublicAssetUrl } from '../utils/assets.js'
 
 function LoginChoice() {
   return (
     <main className="auth-page">
       <section className="login-choice">
-        <Link className="brand auth-brand" to="/"><img src="/images/logo.png" alt="" /><span>TICKETLY</span></Link>
+        <Link className="brand auth-brand" to="/"><img src={getPublicAssetUrl('/images/logo.png')} alt="" /><span>TICKETLY</span></Link>
         <p className="eyebrow">WELCOME TO TICKETLY</p>
         <h1>Choose your sign-in.</h1>
         <p className="auth-description">Select the account type you want to use. Each has a separate login and dashboard.</p>

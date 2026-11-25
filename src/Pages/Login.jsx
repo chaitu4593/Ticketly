@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { getPublicAssetUrl } from '../utils/assets.js'
 import { getStoredAccounts } from '../utils/storage.js'
 
 function Login({ onLogin }) {
@@ -44,7 +45,7 @@ function Login({ onLogin }) {
   return (
     <main className="auth-page">
       <section className="auth-card">
-        <Link className="brand auth-brand" to="/"><img src="/images/logo.png" alt="" /><span>TICKETLY</span></Link>
+        <Link className="brand auth-brand" to="/"><img src={getPublicAssetUrl('/images/logo.png')} alt="" /><span>TICKETLY</span></Link>
         <p className="eyebrow">WELCOME BACK</p>
         <h1>Good to see you.</h1>
         <p className="auth-description">Sign in to pick up where the good times left off.</p>

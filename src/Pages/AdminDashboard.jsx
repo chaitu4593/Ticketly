@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import { getPublicAssetUrl } from '../utils/assets.js'
 import { formatPrice, getStoredBookings } from '../utils/storage.js'
 
 function AdminDashboard({ user, events, notice, onLogout }) {
@@ -11,7 +12,7 @@ function AdminDashboard({ user, events, notice, onLogout }) {
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <Link className="brand admin-brand" to="/"><img src="/images/logo.png" alt="" /><span>TICKETLY</span></Link>
+        <Link className="brand admin-brand" to="/"><img src={getPublicAssetUrl('/images/logo.png')} alt="" /><span>TICKETLY</span></Link>
         <p className="sidebar-label">WORKSPACE</p>
         <Link className={!showingBookings ? 'sidebar-link active' : 'sidebar-link'} to="/admin">▦ &nbsp; Overview</Link>
         <Link className="sidebar-link" to="/admin/events?add=1">＋ &nbsp; Add event</Link>

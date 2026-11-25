@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import adminCredentials from '../config/adminCredentials.js'
+import { getPublicAssetUrl } from '../utils/assets.js'
 import { getStoredAccounts } from '../utils/storage.js'
 
 const initialForm = { name: '', email: '', phone: '', password: '', confirmPassword: '' }
@@ -44,7 +45,7 @@ function Signup({ onRegister }) {
   return (
     <main className="auth-page">
       <section className="auth-card auth-card-wide">
-        <Link className="brand auth-brand" to="/"><img src="/images/logo.png" alt="" /><span>TICKETLY</span></Link>
+        <Link className="brand auth-brand" to="/"><img src={getPublicAssetUrl('/images/logo.png')} alt="" /><span>TICKETLY</span></Link>
         <p className="eyebrow">YOUR NEXT STORY STARTS HERE</p>
         <h1>Create your account.</h1>
         <p className="auth-description">One account for every show, match and memorable night.</p>

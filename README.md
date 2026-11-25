@@ -38,7 +38,9 @@ There is one configured Admin account. Admins sign in separately at `/admin/logi
 - `/admin` — Admin overview and booking totals
 - `/admin/events` — Add, edit and delete events
 
-Homepage event posters and banners are stored in `public/images`. New event poster paths should point to an image in that folder, such as `/images/event1.jpg`.
+Homepage event posters and banners are stored in `public/images`. New event poster paths should point to an image in that folder, such as `/images/event1.jpg`; the app applies Vite's configured base URL when rendering saved poster paths. The GitHub Pages base is `/Ticketly/`, and Vite serves the same assets correctly during local development.
+
+The production build also creates `dist/404.html` from the app entry page so GitHub Pages can load supported client-side routes on direct visits and refreshes.
 
 ## Demo authentication notice
 

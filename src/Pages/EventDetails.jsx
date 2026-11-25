@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import Footer from '../Components/Footer.jsx'
 import Header from '../Components/Header.jsx'
+import { getPublicAssetUrl } from '../utils/assets.js'
 import { formatPrice } from '../utils/storage.js'
 
 function EventDetails({
@@ -30,7 +31,7 @@ function EventDetails({
         <Link className="back-link" to="/">← Back to explore</Link>
         <div className="details-layout">
           <div className="details-image">
-            <img alt={event.name} onError={(imageEvent) => { imageEvent.currentTarget.style.display = 'none' }} src={event.poster} />
+            <img alt={event.name} onError={(imageEvent) => { imageEvent.currentTarget.style.display = 'none' }} src={getPublicAssetUrl(event.poster)} />
           </div>
           <section className="details-copy">
             <span className="pill">{event.category}</span>
